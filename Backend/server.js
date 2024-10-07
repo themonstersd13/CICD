@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI || "mongo://mongodb://localhost:27017/Tasks");
 
 app.use('/api', todoRoutes);
 
