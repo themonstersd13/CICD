@@ -1,41 +1,32 @@
 version: '3.8'
+
 services:
-  # MongoDB Service
-  mongo:
-    image: mongo:6
-    container_name: mongo
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongo-data:/data/db
-
-  # Backend Service
-  backend:
-    build:
-      context: ./Backend
-    container_name: Backend
-    ports:
-      - '5000:5000'
-    environment:
-      MONGO_URI: mongodb://mongo:27017/todolist
-    depends_on:
-      - mongo
-    volumes:
-      - ./Backend:/app
-    restart: always
-
-  # Frontend Service 
   frontend:
     build:
       context: ./Frontend
-    container_name: Frontend
+      dockerfile: Dockerfile
     ports:
-      - '5173:5173'
+      - "5173:5173"
     depends_on:
       - backend
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/Tasks
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
     volumes:
-      - ./Frontend:/app
-    restart: always
+      - mongo_data:/data/db
 
 volumes:
-  mongo-data:
+  mongo_data:
