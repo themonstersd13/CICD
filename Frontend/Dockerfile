@@ -1,21 +1,21 @@
-FROM oven/bun:latest as build
+FROM oven/bun:latest AS build
 
 WORKDIR /app
 
-COPY package.json bun.lockb ./
+COPY package.json ./
 RUN bun install
 
 COPY . .
 
 RUN bun run build
 
-# FROM node:alpine as production
+FROM node:alpine AS production
 
-# WORKDIR /app
-
-RUN bun install -g serve
+WORKDIR /app
 
 COPY --from=build /app/dist ./dist
+
+RUN npm install -g serve
 
 EXPOSE 5173
 
