@@ -9,11 +9,11 @@ COPY . .
 
 RUN bun run build
 
-FROM node:alpine as production
+# FROM node:alpine as production
 
-WORKDIR /app
+# WORKDIR /app
 
-RUN npm install -g serve
+RUN bun install -g serve
 
 COPY --from=build /app/dist ./dist
 
