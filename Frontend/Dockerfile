@@ -6,7 +6,7 @@ COPY package.json ./
 RUN bun install
 
 COPY . .
-
+RUN bun run tailwind
 RUN bun run build
 
 FROM node:alpine AS production

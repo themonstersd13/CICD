@@ -625,36 +625,37 @@ html {
 }
 
 :root {
-  color-scheme: dark;
-  --b2: 17.522% 0.007709 17.911578;
-  --b3: 16.2032% 0.007129 17.911578;
+  color-scheme: light;
+  --b2: 87.8943% 0.16647 104.32;
+  --b3: 81.2786% 0.15394 104.32;
   --in: 72.06% 0.191 231.6;
   --su: 64.8% 0.150 160;
   --wa: 84.71% 0.199 83.87;
   --er: 71.76% 0.221 22.18;
-  --bc: 83.7682% 0.001658 17.911578;
-  --sc: 13.9553% 0.027077 168.327128;
-  --ac: 14.1257% 0.02389 185.713193;
-  --nc: 86.1397% 0.007806 171.364646;
+  --bc: 18.902% 0.0358 104.32;
+  --pc: 14.844% 0.0418 6.35;
+  --sc: 16.666% 0.0368 204.72;
+  --ac: 14.372% 0.04352 310.43;
   --inc: 0% 0 0;
   --suc: 0% 0 0;
   --wac: 0% 0 0;
   --erc: 0% 0 0;
-  --rounded-box: 1rem;
-  --rounded-badge: 1.9rem;
   --animation-btn: 0.25s;
   --animation-input: .2s;
   --btn-focus-scale: 0.95;
   --border-btn: 1px;
   --tab-border: 1px;
-  --tab-radius: 0.5rem;
-  --p: 68.6283% 0.185567 148.958922;
-  --pc: 0% 0 0;
-  --s: 69.7764% 0.135385 168.327128;
-  --a: 70.6285% 0.119451 185.713193;
-  --n: 30.6985% 0.039032 171.364646;
-  --b1: 18.8409% 0.00829 17.911578;
-  --rounded-btn: 1.9rem;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  --p: 74.22% 0.209 6.35;
+  --s: 83.33% 0.184 204.72;
+  --a: 71.86% 0.2176 310.43;
+  --n: 23.04% 0.065 269.31;
+  --nc: 94.51% 0.179 104.32;
+  --b1: 94.51% 0.179 104.32;
+  --rounded-box: 0;
+  --rounded-btn: 0;
+  --rounded-badge: 0;
+  --tab-radius: 0;
 }
 
 .avatar.placeholder > div {
@@ -1357,11 +1358,6 @@ html {
   border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
@@ -1370,20 +1366,6 @@ html {
 .bg-base-200 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
-}
-
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
-
-.from-\[\#1a3c5b\] {
-  --tw-gradient-from: #1a3c5b var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(26 60 91 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-\[\#0d1e2e\] {
-  --tw-gradient-to: #0d1e2e var(--tw-gradient-to-position);
 }
 
 .p-2 {
@@ -1423,12 +1405,6 @@ html {
 
 .line-through {
   text-decoration-line: line-through;
-}
-
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-xl {
