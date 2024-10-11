@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git url: 'https://github.com/AdityaAparadh/CICD.git'
+            }
+        }
+        
+        stage('Build and Deploy') {
+            steps {
+                script {
+                    sh 'docker compose up -d --build'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+
+            cleanWs()
+        }
+    }
+}
