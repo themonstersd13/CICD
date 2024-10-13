@@ -1,16 +1,13 @@
-const request = require('supertest');
-const express = require('express');
+import { test } from 'bun:test';
+import fetch from 'node-fetch';
 
-const app = express();
+const baseUrl = 'http://localhost:5000'; 
 
-app.get('/ping', (req, res) => {
-  res.status(200).send('PONG');
-});
+test('GET /ping returns PONG', async () => {
+    const response = await fetch(`${baseUrl}/ping`);
+    const text = await response.text();
 
-describe('GET /ping', () => {
-  it('should respond with PONG and status 200', async () => {
-    const response = await request(app).get('/ping');
-    expect(response.status).toBe(200);
-    expect(response.text).toBe('PONG');
-  });
+    if (response.status !== 200 || text !== 'PONG') {
+        throw new Error(`Expected 200 PONG, got ${response.status} ${text}`);
+    }
 });
