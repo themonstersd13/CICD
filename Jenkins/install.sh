@@ -56,3 +56,11 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo usermod -aG docker jenkins
 sudo systemctl start jenkins
+
+
+# ----------------------------------------------------------------------------
+# Pull Images
+# ----------------------------------------------------------------------------
+sudo docker pull oven/bun:latest
+sudo docker pull node:alpine
+sudo docker pull mongo:latest
