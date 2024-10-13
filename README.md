@@ -11,7 +11,9 @@ Firstly you need :
 Make sure you add `Jenkins` to `Docker` Group, and restart `jenkins.service`.
 
 Install script for above tools ( only for debian based distributions can be found inside Jenkins folder)
-
+```bash
+sudo bash <(curl -sSL https://raw.githubusercontent.com/AdityaAparadh/CICD/master/Jenkins/install.sh)
+```
 
 
 ### Setup
