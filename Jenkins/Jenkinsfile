@@ -7,10 +7,34 @@ pipeline {
             }
         }
         
-        stage('Build and Deploy') {
+        stage('Build Frontend') {
             steps {
                 script {
-                    sh 'docker compose up -d --build'
+                    sh 'docker build -t frontend-image -f Frontend/Dockerfile ./Frontend'
+                }
+            }
+        }
+
+        stage('Build Backend') {
+            steps {
+                script {
+                    sh 'docker build -t backend-image -f Backend/Dockerfile ./Backend'
+                }
+            }
+        }
+
+        stage('Test Backend') {
+            steps {
+                script {
+                    sh 'docker run --rm backend-image bun run test'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    sh 'docker compose up -d'
                 }
             }
         }
@@ -18,7 +42,6 @@ pipeline {
 
     post {
         always {
-
             cleanWs()
         }
     }
