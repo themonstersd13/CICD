@@ -38,7 +38,7 @@ function TodoApp() {
   };
 
 return (
-  <div className="min-h-screen bg-base-200 p-8">
+  <div className="min-h-screen bg-zinc-600 p-8">
     <div className="max-w-md mx-auto bg-base-100 p-6 rounded-lg shadow-xl">
       <h1 className="text-3xl font-bold mb-4 text-center text-primary">Todo List</h1>
 
